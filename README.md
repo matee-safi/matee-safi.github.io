@@ -82,9 +82,9 @@ After you're finished please remove all the comments and instructions!
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo" href="https://matee-safi.github.io/"></a>
+## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Coming soon...](https://yourdeployedapplicationlink.com)
+- [View page](https://matee-safi.github.io/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
