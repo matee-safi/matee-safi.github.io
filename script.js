@@ -1,9 +1,17 @@
-// function changeIcon(){
+const btn = document.querySelector('#hamburger');
+const nav = document.querySelector('.nav nav');
+const openNav = document.querySelector('.menuOn');
+const closeBtn = document.querySelector('.crossIcon');
 
-//   let icon = document.getElementById('hamburger');
-//   if(icon.src.match('./assets/hamburger-icon.svg')){
-//       icon.src = './assets/Enabled.png';
-//   }else{
-//       icon.src = './assets/hamburger-icon.svg';
-//   }
-// }
+const toggleMenuDisplay = () => {
+  if (nav.style.display !== 'none') {
+    nav.style.display = 'none';
+    openNav.style.display = 'flex';
+  } else {
+    nav.style.display = 'grid';
+    openNav.style.display = 'none';
+  }
+};
+
+btn.addEventListener('click', toggleMenuDisplay);
+closeBtn.addEventListener('click', toggleMenuDisplay);

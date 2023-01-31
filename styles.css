@@ -15,35 +15,34 @@ nav {
   grid-template: 100%/ 80% 20%;
 }
 
+.invisible {
+  display: none;
+}
+
 .menuOn {
   display: none;
   flex-direction: column;
   height: 100vh;
+  width: 100vw;
   background-color: #3c3a39;
   color: #fff5e1;
-  position: sticky;
+  position: fixed;
   padding: 24px;
 }
 
 .crossIcon {
- margin-right: 0px;
- margin-bottom: 14px;
+  margin-right: 0;
+  margin-bottom: 14px;
 }
 
 .menuOn ul {
   list-style: none;
-  font-family: 'Inter';
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 44px;
-
   width: 100%;
-}
-
-.menuOn ul li {
-  border-bottom: #6F6C6B solid 1px;
-  margin-bottom: 20px;
 }
 
 .logo-container {
@@ -378,6 +377,11 @@ nav {
   font-size: 22px;
   line-height: 43px;
   margin-bottom: 18px;
+}
+
+.menuOn ul li {
+  border-bottom: #6f6c6b solid 1px;
+  margin-bottom: 20px;
 }
 
 .languages h4 {
@@ -887,5 +891,9 @@ textarea::placeholder {
 
   footer {
     border-top: 1px solid #dfe1e6;
+  }
+
+  .menu {
+    display: none;
   }
 }
