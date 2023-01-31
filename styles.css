@@ -182,7 +182,7 @@ nav {
   background: white;
   border: 1px solid #8993a4;
   padding: 10px 12px;
-  font-family: 'inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .orange-btn {
@@ -262,6 +262,10 @@ nav {
   -webkit-appearance: inherit;
   padding: 10px 12px;
   margin-right: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .work-grids {

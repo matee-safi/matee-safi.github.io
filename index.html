@@ -276,9 +276,14 @@
         </div>
         <div class="email">
             <form action="https://formspree.io/f/xpzewrow" method="post">
-                <input class="color-primary" type="text" placeholder="Full name" required maxlength="30">
-                <input class="color-primary" type="email" placeholder="Email address" required>
-                <textarea name="comment" cols="30" rows="10" placeholder="Enter text here" required maxlength="500"></textarea>
+                <label for="form-name"></label>
+                <input class="color-primary" id="form-name" type="text" placeholder="Full name" required maxlength="30">
+
+                <label for="form-email"></label>
+                <input class="color-primary" id="form-email" type="email" placeholder="Email address" required>
+
+                <label for="form-textarea"></label>
+                <textarea name="comment" id="form-textarea" cols="30" rows="10" placeholder="Enter text here" required maxlength="500"></textarea>
                 <button type="submit" class="get-intouch-btn color-primary button">Get in touch</button>
             </form>
         </div>
