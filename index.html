@@ -20,12 +20,20 @@
                 <img id="hamburger" src="./assets/hamburger-icon.svg" alt="hamburger menu">
             </div>
         </nav>
+        <div class="menuOn">	
+            <div class="crossIcon"><img src="./assets/Enabled.png" alt="crossIcon"></div>	
+            <ul id="menu-link">	
+                <li><a href="#portfolio">&nbsp;&nbsp;Portfolio</a></li>
+                <li><a href="#about">&nbsp;&nbsp;About</a></li>
+                <li><a href="#contact">&nbsp;&nbsp;Contact</a></li>
+            </ul>	
+        </div>
         <nav class="desktop color-primary">
             <ul>
                 <h6>Matee Safi</h6>
-                <li><a class="color-primary" href="#">Portfolio</a></li>
-                <li><a class="color-primary"  href="#">About</a></li>
-                <li><a class="color-primary"  href="#">Contact</a></li>
+                <li><a class="color-primary" href="#portfolio">Portfolio</a></li>
+                <li><a class="color-primary"  href="#about">About</a></li>
+                <li><a class="color-primary"  href="#contact">Contact</a></li>
                 <li class="mail"><a href="#"><img src="/assets/mail-icon.png" alt="email"></a></li>
             </ul>
         </nav>
@@ -96,7 +104,7 @@
             </li>
         </ul>
     </section>
-    <section class="works">
+    <section class="works" id="portfolio">
         <div class="recent-works">
             <h2>My Recent Works</h2>
             <hr class="border">
@@ -240,7 +248,7 @@
         </div>
     </div>
     </section>
-    <section class="about-me">
+    <section class="about-me" id="about">
             <div class="about-me-headline">
                 <h2 class="color-secondary">About me</h2>
                 <p>Hello I'm a software developer! I can help you build a product , feature or website Look through some of my work and experience! If you like what you see and have a project you need coded, don’t hestiate to contact me.</p>
@@ -270,7 +278,7 @@
         </ul>
     </div>
     </section>
-    <section class="contact">
+    <section class="contact" id="contact">
         <div class="email-header">
             <h4 id="contact-text">I'm always interested in hearing about new projects, so if you'd like to chat please get in touch.</h4>
         </div>
@@ -298,5 +306,6 @@
         <li><a href="medium.com"><img src="/assets/medium.png" alt="medium"></a></li>
     </ul>
     </footer>
+	<script src="./script.js"></script>
 </body>
 </html>

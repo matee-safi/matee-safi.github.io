@@ -10,8 +10,52 @@ nav {
   height: 10vh;
   width: 100%;
   background-color: #3c3a39;
-  display: flex;
+  display: grid;
   justify-content: space-between;
+  grid-template: 100%/ 80% 20%;
+}
+
+.invisible {
+  display: none;
+}
+
+#hamburger {
+  cursor: pointer;
+}
+
+.crossIcon img {
+  cursor: pointer;
+}
+
+.menuOn {
+  display: none;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #3c3a39;
+  color: #fff5e1;
+  position: fixed;
+  padding: 10px 24px;
+}
+
+.menuOn ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.crossIcon {
+  margin-right: 0;
+  margin-bottom: 14px;
+}
+
+.menuOn ul {
+  list-style: none;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  width: 100%;
 }
 
 .logo-container {
@@ -26,19 +70,16 @@ nav {
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
-  text-align: center;
   padding-left: 24px;
+  margin-left: 0;
 }
 
 .menu {
-  width: 40px;
-  height: 40px;
-  display: block;
+  display: flex;
   align-self: center;
   align-content: center;
-  padding: 10px 10px;
-  float: right;
-  margin-right: 20px;
+  flex-direction: row;
+  justify-self: flex-end;
 }
 
 .main-line {
@@ -102,11 +143,6 @@ nav {
   align-self: center;
   width: 20px;
   height: 16px;
-}
-
-.menu:hover {
-  cursor: pointer;
-  background-color: #1c1a19;
 }
 
 .fw-400 {
@@ -354,6 +390,11 @@ nav {
   font-size: 22px;
   line-height: 43px;
   margin-bottom: 18px;
+}
+
+.menuOn ul li {
+  border-bottom: #6f6c6b solid 1px;
+  margin-bottom: 20px;
 }
 
 .languages h4 {
@@ -863,5 +904,9 @@ textarea::placeholder {
 
   footer {
     border-top: 1px solid #dfe1e6;
+  }
+
+  .menu {
+    display: none;
   }
 }
