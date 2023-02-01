@@ -19,15 +19,28 @@ nav {
   display: none;
 }
 
+#hamburger {
+  cursor: pointer;
+}
+
+.crossIcon img {
+  cursor: pointer;
+}
+
 .menuOn {
   display: none;
   flex-direction: column;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   background-color: #3c3a39;
   color: #fff5e1;
   position: fixed;
-  padding: 24px;
+  padding: 10px 24px;
+}
+
+.menuOn ul li a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .crossIcon {
