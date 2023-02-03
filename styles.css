@@ -77,7 +77,7 @@ nav {
 .menu {
   display: flex;
   align-self: center;
-  align-content: center;
+  align-content: flex-end;
   flex-direction: row;
   justify-self: flex-end;
 }
@@ -234,6 +234,11 @@ nav {
   line-height: 24px;
   border-style: none;
   margin-bottom: 24px;
+}
+
+.orange-btn:active {
+  background: #e05304;
+  color: white;
 }
 
 .project-data {
@@ -572,6 +577,7 @@ textarea::placeholder {
   width: 16px;
   position: relative;
   bottom: 2px;
+  cursor: pointer;
 }
 
 .popup ul {
@@ -689,6 +695,7 @@ textarea::placeholder {
   .poptop-desktop img {
     margin-top: 8px;
     margin-right: 8px;
+    cursor: pointer;
   }
 
   .desktop li {
@@ -930,6 +937,11 @@ textarea::placeholder {
     border: 1px solid #ff6b00;
   }
 
+  .orange-btn:active {
+    background: #e05304;
+    color: white;
+  }
+
   .work-grids {
     display: none;
   }
@@ -974,11 +986,11 @@ textarea::placeholder {
     flex-direction: row;
   }
 
-  .work-grid-4 {
+  .work-grid-off {
     display: none;
   }
 
-  .work-grid-4 button {
+  .work-grid-off button {
     width: 100%;
     display: block;
   }
@@ -1002,6 +1014,18 @@ textarea::placeholder {
     text-align: center;
   }
 
+  .seeProject-btn:hover {
+    background: white;
+    color: #ff6b00;
+    border: 1px solid #ff6b00;
+    cursor: pointer;
+  }
+
+  .seeProject-btn:active {
+    background: #e05304;
+    color: white;
+  }
+
   .work-grid-desktop:hover {
     background-image: url(assets/Img\ Placeholder3.svg);
     padding: 0;
@@ -1017,15 +1041,27 @@ textarea::placeholder {
     display: block;
   }
 
-  .work-grid-1 {
+  .work-grid-0 {
     background-image: url(/assets/Img\ Placeholder4.png);
   }
 
-  .work-grid-2 {
+  .work-grid-1 {
     background-image: url(/assets/Img\ Placeholder.png);
   }
 
+  .work-grid-2 {
+    background-image: url(/assets/Img\ Placeholder5.png);
+  }
+
   .work-grid-3 {
+    background-image: url(/assets/Img\ Placeholder4.png);
+  }
+
+  .work-grid-4 {
+    background-image: url(/assets/Img\ Placeholder.png);
+  }
+
+  .work-grid-5 {
     background-image: url(/assets/Img\ Placeholder5.png);
   }
 

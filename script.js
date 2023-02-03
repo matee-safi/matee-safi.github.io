@@ -1,143 +1,31 @@
-// Variables
-const body = document.querySelector('body');
+// Hamburger menu
 const btn = document.querySelector('#hamburger');
 const nav = document.querySelector('.nav nav');
 const openNav = document.querySelector('.menuOn');
 const closeBtn = document.querySelector('.crossIcon');
 const menuLink = document.querySelectorAll('#menu-link li a');
-const popup = document.querySelector('.pop-background');
-const openPopBtn = document.querySelector('.orange-btn');
-const closePopBtn = document.querySelector('.poptop img');
-const seeProject = document.querySelectorAll('.seeProject-btn');
-const closeCrossDesktop = document.querySelector('.poptop-desktop img');
-const works = document.getElementById('portfolio');
-const cards = `        <div class="work-grids">
-<div class="project-data color-primary">
-    <h2>Professional Art<br>Printing Data</h2>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-   <button class="seeProject-btn color-primary">See Project</button>
-</div>
-<div class="project-data color-primary">
-    <h2>Professional Art<br>Printing Data</h2>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary">See Project</button>
-</div>
-<div class="project-data color-primary">
-    <h2>Professional Art<br>Printing Data</h2>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary">See Project</button>
-</div>
-<div class="project-data color-primary">
-    <h2>Professional Art<br>Printing Data</h2>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary">See Project</button>
-</div>
-<div class="project-data color-primary">
-    <h2>Professional Art<br>Printing Data</h2>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary">See Project</button>
-</div>
-<div class="project-data color-primary">
-    <h2>Professional Art<br>Printing Data</h2>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary">See Project</button>
-</div>
-</div>
-<div class="work-grids-desktop color-primary">
-<div class="work-grid-1 work-grid-desktop">
-    <h6>Profesional Art Printing Data More</h6>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary button">See project</button>
-</div>
-<div class="work-grid-2 work-grid-desktop">
-    <h6>Data Dashboard<br>Healthcare</h6>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary button">See project</button>
-</div>
-<div class="work-grid-3 work-grid-desktop">
-    <h6>Website Protfolio</h6>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary button">See project</button>
-</div>
-<div class="work-grid-1 work-grid-desktop">
-    <h6>Profesional Art Printing Data More</h6>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links wl-1">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary button">See project</button>
-</div>
-<div class="work-grid-2 work-grid-desktop">
-    <h6>Data Dashboard<br>Healthcare</h6>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary button">See project</button>
-</div>
-<div class="work-grid-3 work-grid-desktop">
-    <h6>Website Protfolio</h6>
-    <p>A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard</p>
-    <ul class="project-links">
-        <li>html</li>
-        <li>bootstrap</li>
-        <li>Ruby</li>
-    </ul>
-    <button class="seeProject-btn color-primary button">See project</button>
-</div>
-</div>`;
+
+const toggleMenuDisplay = () => {
+  if (nav.style.display !== 'none') {
+    nav.style.display = 'none';
+    openNav.style.display = 'flex';
+  } else {
+    nav.style.display = 'grid';
+    openNav.style.display = 'none';
+  }
+};
+
+btn.addEventListener('click', toggleMenuDisplay);
+closeBtn.addEventListener('click', toggleMenuDisplay);
+menuLink.forEach((link) => {
+  link.addEventListener('click', toggleMenuDisplay);
+});
+
+// Popup
+
 const popupContent = `    <div class="pop-background">
 <div class="popup">
-    <div class="poptop"><h3>Multi Post Stories</h3><img src="./assets/Icon.png" alt="cross">
+    <div class="poptop"><h3>Multi Post Stories</h3><img class="closeProject" onClick="togglePopup()" src="./assets/Icon.png" alt="cross">
     </div>
         <ul>
             <li>html</li>
@@ -151,7 +39,7 @@ const popupContent = `    <div class="pop-background">
 <div class="desktopPopup">
     <div class="poptop-desktop">
         <h3>Keeping track of thousands of components website</h3>
-        <img src="/assets/Icon - Cancel.png" alt="cross">
+        <img class="closeProject" onClick="togglePopup()" src="/assets/Icon - Cancel.png" alt="cross">
     </div>
     <ul>
         <li>html</li>
@@ -170,35 +58,149 @@ const popupContent = `    <div class="pop-background">
 </div>
 </div>`;
 
-// Functions
+const popDiv = document.querySelector('#portfolio');
 
-works.insertAdjacentHTML('beforeend', cards);
-body.insertAdjacentHTML('beforeend', popupContent);
+popDiv.insertAdjacentHTML('afterend', popupContent);
 
-const toggleMenuDisplay = () => {
-  if (nav.style.display !== 'none') {
-    nav.style.display = 'none';
-    openNav.style.display = 'flex';
-  } else {
-    nav.style.display = 'grid';
-    openNav.style.display = 'none';
-  }
+const togglePopup = () => {
+  document.querySelector('.pop-background').classList.toggle('openPopup');
 };
 
-function openPopup() {
-  popup.classList.toggle('openPopup');
+const closeProject = document.querySelectorAll('closeProject');
+
+// Work cards
+
+const projectData = [{
+  id: 0,
+  title: 'Professional Art<br>Printing Data',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+  technologies: ['html', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+},
+{
+  id: 1,
+  title: 'Professional Art<br>Printing Data',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+  technologies: ['html', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+},
+{
+  id: 2,
+  title: 'Professional Art<br>Printing Data',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+  technologies: ['html', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+},
+{
+  id: 3,
+  title: 'Professional Art<br>Printing Data',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+  technologies: ['html', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+},
+{
+  id: 4,
+  title: 'Professional Art<br>Printing Data',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+  technologies: ['html', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+},
+{
+  id: 5,
+  title: 'Professional Art<br>Printing Data',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+  technologies: ['html', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+}];
+
+const projectDataDesktop = [
+  {
+    id: 0,
+    title: 'Professional Art<br>Printing Data More',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    technologies: ['html', 'Bootstrap', 'Ruby'],
+    liveUrl: '#',
+    sourceUrl: '#',
+  },
+  {
+    id: 1,
+    title: 'Data Dashboard<br>Healthcare',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    technologies: ['html', 'Bootstrap', 'Ruby'],
+    liveUrl: '#',
+    sourceUrl: '#',
+  },
+  {
+    id: 2,
+    title: 'Website Portfolio',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    technologies: ['html', 'Bootstrap', 'Ruby'],
+    liveUrl: '#',
+    sourceUrl: '#',
+  },
+  {
+    id: 3,
+    title: 'Professional Art<br>Printing Data More',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    technologies: ['html', 'Bootstrap', 'Ruby'],
+    liveUrl: '#',
+    sourceUrl: '#',
+  },
+  {
+    id: 4,
+    title: 'Data Dashboard<br>Healthcare',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    technologies: ['html', 'Bootstrap', 'Ruby'],
+    liveUrl: '#',
+    sourceUrl: '#',
+  },
+  {
+    id: 5,
+    title: 'Website Portfolio',
+    description: "A daily selection of privately personalized reads; no accounts or sign-ups required. has been the industry's standard",
+    technologies: ['html', 'Bootstrap', 'Ruby'],
+    liveUrl: '#',
+    sourceUrl: '#',
+  },
+];
+
+for (let i = 0; i < projectData.length; i += 1) {
+  const card = document.createElement('div');
+  card.classList.add('project-data', 'color-primary');
+  card.innerHTML = `
+  <h2>${projectData[i].title}</h2>
+  <p>${projectData[i].description}</p>
+  <ul class="project-links">
+      <li>${projectData[i].technologies[0]}</li>
+      <li>${projectData[i].technologies[1]}</li>
+      <li>${projectData[i].technologies[2]}</li>
+  </ul>
+ <button id="${projectData[i].id}" class="seeProject-btn color-primary" onclick="togglePopup()">See Project</button>`;
+
+  document.querySelector('.work-grids').appendChild(card);
 }
 
-// Eventlisteners
+for (let i = 0; i < projectDataDesktop.length; i += 1) {
+  const card = document.createElement('div');
+  card.classList.add('work-grid-desktop', `work-grid-${projectDataDesktop[i].id}`);
+  card.innerHTML = `
+  <h6>${projectDataDesktop[i].title}</h6>
+  <p>${projectDataDesktop[i].description}</p>
+  <ul class="project-links">
+      <li>${projectDataDesktop[i].technologies[0]}</li>
+      <li>${projectDataDesktop[i].technologies[1]}</li>
+      <li>${projectDataDesktop[i].technologies[2]}</li>
+  </ul>
+ <button id="${projectDataDesktop[i].id}" class="seeProject-btn color-primary" onclick="togglePopup()">See Project</button>`;
 
-seeProject.forEach((btn) => {
-  btn.addEventListener('click', openPopup);
+  document.querySelector('.work-grids-desktop').appendChild(card);
+}
+closeProject.forEach((closePro) => {
+  closePro.addEventListener('click', togglePopup);
 });
-closePopBtn.addEventListener('click', openPopup);
-openPopBtn.addEventListener('click', openPopup);
-btn.addEventListener('click', toggleMenuDisplay);
-closeBtn.addEventListener('click', toggleMenuDisplay);
-menuLink.forEach((link) => {
-  link.addEventListener('click', toggleMenuDisplay);
-});
-closeCrossDesktop.addEventListener('click', openPopup);
