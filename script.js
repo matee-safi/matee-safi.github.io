@@ -146,7 +146,7 @@ for (let i = 0; i < projectDataDesktop.length; i += 1) {
   const card = document.createElement('div');
   card.setAttribute('data-cardId', `${projectData[i].id}`);
   card.innerHTML = `
-  <div class="project-data color-primary card=${projectData[i].id}">
+  <div class="work-grid-desktop work-grid-${projectDataDesktop[i].id}">
     <h6>${projectDataDesktop[i].title}</h6>
     <p>${projectDataDesktop[i].description}</p>
     <ul class="project-links">
