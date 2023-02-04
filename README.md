@@ -90,12 +90,17 @@ After you're finished please remove all the comments and instructions!
 
 <!-- AUTHORS -->
 
-## 👥 Author<a name="authors"></a>
+## 👥 Authors<a name="authors"></a>
 
-
+# Matee Safi
 - GitHub: [@matee-safi](https://github.com/matee-safi)
 - Twitter: [@matee_safi](https://twitter.com/matee_safi)
 - LinkedIn: [matee-safi](https://linkedin.com/in/matee-safi-755421243)
+
+# Jose Luis
+- GitHub: [@jlvFlores](https://github.com/jlvFlores)
+- Twitter: [@JoseVaz44312762](https://twitter.com/JoseVaz44312762)
+- LinkedIn: [Jose Vazquez](https://www.linkedin.com/in/jose-vazquez-178a8225a/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
