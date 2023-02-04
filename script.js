@@ -21,8 +21,6 @@ menuLink.forEach((link) => {
   link.addEventListener('click', toggleMenuDisplay);
 });
 
-
-
 // Work cards
 const projectData = [{
   id: 0,
@@ -124,7 +122,7 @@ const projectDataDesktop = [
   },
 ];
 
-for (let i = 0; i < projectData.length; i++) { 
+for (let i = 0; i < projectData.length; i += 1) {
   const card = document.createElement('div');
   card.setAttribute('data-cardId', `${projectData[i].id}`);
   card.innerHTML = `
@@ -153,18 +151,17 @@ for (let i = 0; i < projectDataDesktop.length; i += 1) {
       <li>${projectDataDesktop[i].technologies[1]}</li>
       <li>${projectDataDesktop[i].technologies[2]}</li>
     </ul>
-    <button id="${projectData[i].id}" class="seeProject-btn color-primary" data-idDesktop="${projectDataDesktop[i].id}">See Project</button>
+    <button id="${projectData[i].id}" class="seeProject-btn color-primary" data-id="${projectData[i].id}">See Project</button>
   </div>`;
   document.querySelector('.work-grids-desktop').appendChild(card);
 }
 
 // Popup
-  const togglePopup = () => {
-    document.querySelector('.pop-background').classList.toggle('openPopup');
-  };
+const togglePopup = () => {
+  document.querySelector('.pop-background').classList.toggle('openPopup');
+};
 
 function popupFuntion(cardId) {
-
   const popDiv = document.querySelector('#portfolio');
   popDiv.insertAdjacentHTML('afterend', `
   <div class="pop-background">
@@ -209,7 +206,7 @@ function popupFuntion(cardId) {
       </div>
     </div>
   </div>`);
-  
+
   togglePopup();
 
   const closeProject = document.querySelectorAll('.closeProject');
@@ -223,5 +220,4 @@ projectButtons.forEach((element) => {
   element.addEventListener('click', (e) => {
     popupFuntion(e.target.dataset.id);
   });
-})
-
+});
