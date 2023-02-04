@@ -6,6 +6,17 @@
   box-sizing: border-box;
 }
 
+.error-msg {
+  color: rgb(218, 41, 41);
+  padding-left: 6%;
+  font-family: 'inter', sans-serif;
+}
+
+.invalid {
+  border: 2px solid red !important;
+  border-radius: 5px;
+}
+
 nav {
   height: 10vh;
   width: 100%;
