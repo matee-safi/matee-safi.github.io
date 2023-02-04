@@ -22,6 +22,15 @@ menuLink.forEach((link) => {
 });
 
 // Work cards
+const recentWork = {
+  id: 6,
+  title: 'Multi-Post Stories',
+  description: "A daily selection of privately personalized reads; no accounts or sign-ups required. This has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a standard dummy text.",
+  technologies: ['CSS', 'HTML', 'Bootstrap', 'Ruby'],
+  liveUrl: '#',
+  sourceUrl: '#',
+};
+
 const projectData = [{
   id: 0,
   title: 'Professional Art<br>Printing Data',
@@ -122,6 +131,27 @@ const projectDataDesktop = [
   },
 ];
 
+const bigCard = document.createElement('div');
+bigCard.classList.add('recent-works');
+bigCard.innerHTML = `
+  <h2>My Recent Works</h2>
+  <hr class="border">
+  <div class="desktop-works">
+  <img src="assets/Img Placeholder.svg" alt="yoga stretch">
+  <div class="desktop-projects">
+  <h3>${recentWork.title}</h3>
+  <p>${recentWork.description}</p>
+  <ul class="projects">
+      <li class="links">${recentWork.technologies[0]}</li>
+      <li class="links">${recentWork.technologies[1]}</li>
+      <li class="links">${recentWork.technologies[2]}</li>
+      <li class="links">${recentWork.technologies[3]}</li>
+  </ul>
+  <button id="${recentWork.id}" data-id="${recentWork.id}" class="orange-btn color-primary">See Project</button>
+  </div>
+  </div>`;
+document.querySelector('#portfolio').prepend(bigCard);
+
 for (let i = 0; i < projectData.length; i += 1) {
   const card = document.createElement('div');
   card.setAttribute('data-cardId', `${projectData[i].id}`);
@@ -160,6 +190,62 @@ for (let i = 0; i < projectDataDesktop.length; i += 1) {
 const togglePopup = () => {
   document.querySelector('.pop-background').classList.toggle('openPopup');
 };
+
+function bigPop() {
+  const bigPopDiv = document.querySelector('#portfolio');
+  bigPopDiv.insertAdjacentHTML('afterend', `
+  <div class="pop-background" id="bigCard">
+    <div class="popup">
+      <div class="poptop">
+        <h3>${recentWork.title}</h3>
+        <img class="closeProject" src="./assets/Icon.png" alt="cross">
+      </div>
+      <ul>
+        <li>${recentWork.technologies[0]}</li>
+        <li>${recentWork.technologies[1]}</li>
+        <li>${recentWork.technologies[2]}</li>
+        <li>${recentWork.technologies[3]}</li>
+      </ul>
+      <img src="./assets/Snapshoot Portfolio.png" alt="IOT 10 image">
+      <p>${recentWork.description}</p>
+      <div class="btn-div">
+        <button href"${recentWork.liveUrl}">See Live<img src="./assets/Icon - Export.png" alt="export"></button>
+        <button href"${recentWork.sourceUrl}">See Source<img src="./assets/Icon -GitHub.png" alt="github"></button>
+      </div>
+    </div>
+    <div class="desktopPopup">
+      <div class="poptop-desktop">
+        <h3>${recentWork.title}</h3>
+        <img class="closeProject" src="/assets/Icon - Cancel.png" alt="cross">
+      </div>
+      <ul>
+        <li>${recentWork.technologies[0]}</li>
+        <li>${recentWork.technologies[1]}</li>
+        <li>${recentWork.technologies[2]}</li>
+        <li>${recentWork.technologies[3]}</li>
+      </ul>
+      <div class="popDiskDiv">
+        <div>
+          <img id="snapshootDesktop" src="./assets/Snapshoot desktop.png" alt="IOT 10 image">
+        </div>
+        <div>
+          <p>${recentWork.description}</p>
+          <div class="deskBtnDiv">
+            <button href="${recentWork.liveUrl}">See Live<img src="./assets/Icon - Export Desktop.png" alt="export"></button>
+            <button href="${recentWork.sourceUrl}">See Source<img src="./assets/Icon -GitHub-Desktop.png" alt="github"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>`);
+
+  togglePopup();
+
+  const closeProject = document.querySelectorAll('.closeProject');
+  closeProject.forEach((closePro) => {
+    closePro.addEventListener('click', togglePopup);
+  });
+}
 
 function popupFuntion(cardId) {
   const popDiv = document.querySelector('#portfolio');
@@ -221,3 +307,6 @@ projectButtons.forEach((element) => {
     popupFuntion(e.target.dataset.id);
   });
 });
+
+const bigProjectButton = document.querySelector('.orange-btn');
+bigProjectButton.addEventListener('click', bigPop);
