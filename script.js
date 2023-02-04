@@ -24,7 +24,6 @@ menuLink.forEach((link) => {
 
 
 // Work cards
-
 const projectData = [{
   id: 0,
   title: 'Professional Art<br>Printing Data',
@@ -144,7 +143,7 @@ for (let i = 0; i < projectData.length; i++) {
 
 for (let i = 0; i < projectDataDesktop.length; i += 1) {
   const card = document.createElement('div');
-  card.setAttribute('data-cardId', `${projectData[i].id}`);
+  card.setAttribute('data-cardId', `${projectDataDesktop[i].id}`);
   card.innerHTML = `
   <div class="work-grid-desktop work-grid-${projectDataDesktop[i].id}">
     <h6>${projectDataDesktop[i].title}</h6>
@@ -154,12 +153,15 @@ for (let i = 0; i < projectDataDesktop.length; i += 1) {
       <li>${projectDataDesktop[i].technologies[1]}</li>
       <li>${projectDataDesktop[i].technologies[2]}</li>
     </ul>
-    <button id="${projectDataDesktop[i].id}" class="seeProject-btn color-primary" data-idDesktop="${projectData[i].id}">See Project</button>
+    <button id="${projectData[i].id}" class="seeProject-btn color-primary" data-idDesktop="${projectDataDesktop[i].id}">See Project</button>
   </div>`;
   document.querySelector('.work-grids-desktop').appendChild(card);
 }
 
 // Popup
+  const togglePopup = () => {
+    document.querySelector('.pop-background').classList.toggle('openPopup');
+  };
 
 function popupFuntion(cardId) {
 
@@ -185,30 +187,28 @@ function popupFuntion(cardId) {
     </div>
     <div class="desktopPopup">
       <div class="poptop-desktop">
-        <h3>Keeping track of thousands of components website</h3>
+        <h3>${projectDataDesktop[cardId].title}</h3>
         <img class="closeProject" src="/assets/Icon - Cancel.png" alt="cross">
       </div>
       <ul>
-        <li>html</li>
-        <li>Bootstrap</li>
-        <li>Ruby on rails</li>
+      <li>${projectDataDesktop[cardId].technologies[0]}</li>
+      <li>${projectDataDesktop[cardId].technologies[1]}</li>
+      <li>${projectDataDesktop[cardId].technologies[2]}</li>
       </ul>
       <div class="popDiskDiv">
         <div>
           <img id="snapshootDesktop" src="./assets/Snapshoot desktop.png" alt="IOT 10 image">
         </div>
         <div>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releaLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it 1960s with the releax map lapora verita.</p>
-          <div class="deskBtnDiv"><button>See Live<img src="./assets/Icon - Export Desktop.png" alt="export"></button><button>See Source<img src="./assets/Icon -GitHub-Desktop.png" alt="github"></button></div>
+          <p>${projectDataDesktop[cardId].description}</p>
+          <div class="deskBtnDiv">
+            <button href="${projectDataDesktop[cardId].liveUrl}">See Live<img src="./assets/Icon - Export Desktop.png" alt="export"></button>
+            <button href="${projectDataDesktop[cardId].sourceUrl}">See Source<img src="./assets/Icon -GitHub-Desktop.png" alt="github"></button>
+          </div>
         </div>
       </div>
     </div>
   </div>`);
-
-  
-  const togglePopup = () => {
-    document.querySelector('.pop-background').classList.toggle('openPopup');
-  };
   
   togglePopup();
 
@@ -218,11 +218,10 @@ function popupFuntion(cardId) {
   });
 }
 
-// function
-
 const projectButtons = document.querySelectorAll('.seeProject-btn');
 projectButtons.forEach((element) => {
   element.addEventListener('click', (e) => {
     popupFuntion(e.target.dataset.id);
   });
 })
+

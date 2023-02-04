@@ -1133,8 +1133,7 @@ textarea::placeholder {
 
   .contact button {
     float: left;
-    position: relative;
-    left: 30px;
+    margin-left: 30px;
   }
 
   .email {
@@ -1144,8 +1143,7 @@ textarea::placeholder {
 
   .email-header {
     width: 39%;
-    position: relative;
-    bottom: 80px;
+    margin-bottom: 80px;
   }
 
   #contact-text {
