@@ -315,19 +315,18 @@ bigProjectButton.addEventListener('click', bigPop);
 const form = document.querySelector('form');
 const email = document.querySelector('#form-email');
 
-
 form.addEventListener('submit', (event) => {
   const lowerCasedEmail = email.value.toLocaleLowerCase();
   if (email.value === lowerCasedEmail) {
     form.submit();
   } else {
-    if(document.querySelector('.error-msg')!=null){
+    if (document.querySelector('.error-msg') != null) {
       document.querySelector('.error-msg').remove();
     }
     email.insertAdjacentHTML('afterend', `
     <span class="error-msg">Please make sure your email is in lowercase and Try Again!</span>
     `);
-    email.classList.add('invalid')
+    email.classList.add('invalid');
     event.preventDefault();
   }
 });
