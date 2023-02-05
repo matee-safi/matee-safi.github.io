@@ -191,6 +191,11 @@ const togglePopup = () => {
   document.querySelector('.pop-background').classList.toggle('openPopup');
 };
 
+
+function closePopup(){
+  document.querySelector('.pop-background').remove();
+}
+
 function bigPop() {
   const bigPopDiv = document.querySelector('#portfolio');
   bigPopDiv.insertAdjacentHTML('afterend', `
@@ -243,7 +248,7 @@ function bigPop() {
 
   const closeProject = document.querySelectorAll('.closeProject');
   closeProject.forEach((closePro) => {
-    closePro.addEventListener('click', togglePopup);
+    closePro.addEventListener('click', closePopup);
   });
 }
 
@@ -297,16 +302,16 @@ function popupFuntion(cardId) {
 
   const closeProject = document.querySelectorAll('.closeProject');
   closeProject.forEach((closePro) => {
-    closePro.addEventListener('click', togglePopup);
+    closePro.addEventListener('click', closePopup);
   });
 }
 
 const projectButtons = document.querySelectorAll('.seeProject-btn');
-projectButtons.forEach((element) => {
-  element.addEventListener('click', (e) => {
-    popupFuntion(e.target.dataset.id);
+for(let i = 0; i < projectButtons.length; i++){
+  projectButtons[i].addEventListener('click', (e) => {
+    popupFuntion(e.target.id);
   });
-});
+};
 
 const bigProjectButton = document.querySelector('.orange-btn');
 bigProjectButton.addEventListener('click', bigPop);
