@@ -330,3 +330,31 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
   }
 });
+
+// Preserve data in the browser
+const formName = document.getElementById('form-name');
+const comment = document.getElementById('form-textarea');
+const localData = localStorage.getItem('storedData');
+
+let formData = {
+  name: '',
+  mail: '',
+  comment: '',
+};
+
+if (localData) {
+  formData = JSON.parse(localData);
+  formName.value = formData.name;
+  email.value = formData.mail;
+  comment.value = formData.msg;
+}
+
+const dataStore = (event) => {
+  const element = event.target;
+  formData[element.name] = element.value;
+  localStorage.setItem('storedData', JSON.stringify(formData));
+};
+
+formName.addEventListener('change', dataStore);
+email.addEventListener('change', dataStore);
+comment.addEventListener('change', dataStore);
