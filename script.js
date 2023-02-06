@@ -335,3 +335,35 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
   }
 });
+
+
+// local storage
+const formName = document.getElementById('form-name');
+const formComment = document.getElementById('form-textarea');
+const rawData = localStorage.getItem('savedData');
+let dataObjects = {
+  Name: '',
+  Email: '',
+  Comment: ''
+};
+
+formName.addEventListener('keyup', function getName(e){
+  dataObjects.Name = e.target.value;
+  localStorage.setItem('savedData', JSON.stringify(dataObjects));
+});
+
+email.addEventListener('keyup', function getEmail(e){
+  dataObjects.Email = e.target.value;
+  localStorage.setItem('savedData', JSON.stringify(dataObjects));
+});
+
+formComment.addEventListener('keyup', function getComment(e){
+  dataObjects.Comment = e.target.value;
+  localStorage.setItem('savedData', JSON.stringify(dataObjects));
+});
+
+onload = () => {
+  formName.value = JSON.parse(localStorage.getItem('savedData')).Name;
+  email.value = JSON.parse(localStorage.getItem('savedData')).Email;
+  formComment.value = JSON.parse(localStorage.getItem('savedData')).Comment;
+};
