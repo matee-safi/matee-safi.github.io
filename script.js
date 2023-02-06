@@ -191,6 +191,10 @@ const togglePopup = () => {
   document.querySelector('.pop-background').classList.toggle('openPopup');
 };
 
+function closePopup() {
+  document.querySelector('.pop-background').remove();
+}
+
 function bigPop() {
   const bigPopDiv = document.querySelector('#portfolio');
   bigPopDiv.insertAdjacentHTML('afterend', `
@@ -243,7 +247,7 @@ function bigPop() {
 
   const closeProject = document.querySelectorAll('.closeProject');
   closeProject.forEach((closePro) => {
-    closePro.addEventListener('click', togglePopup);
+    closePro.addEventListener('click', closePopup);
   });
 }
 
@@ -297,16 +301,16 @@ function popupFuntion(cardId) {
 
   const closeProject = document.querySelectorAll('.closeProject');
   closeProject.forEach((closePro) => {
-    closePro.addEventListener('click', togglePopup);
+    closePro.addEventListener('click', closePopup);
   });
 }
 
 const projectButtons = document.querySelectorAll('.seeProject-btn');
-projectButtons.forEach((element) => {
-  element.addEventListener('click', (e) => {
-    popupFuntion(e.target.dataset.id);
+for (let i = 0; i < projectButtons.length; i += 1) {
+  projectButtons[i].addEventListener('click', (e) => {
+    popupFuntion(e.target.id);
   });
-});
+}
 
 const bigProjectButton = document.querySelector('.orange-btn');
 bigProjectButton.addEventListener('click', bigPop);
@@ -330,3 +334,33 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
   }
 });
+
+// local storage
+const formName = document.getElementById('form-name');
+const formComment = document.getElementById('form-textarea');
+const dataObjects = {
+  Name: '',
+  Email: '',
+  Comment: '',
+};
+
+formName.addEventListener('keyup', (e) => {
+  dataObjects.Name = e.target.value;
+  localStorage.setItem('savedData', JSON.stringify(dataObjects));
+});
+
+email.addEventListener('keyup', (e) => {
+  dataObjects.Email = e.target.value;
+  localStorage.setItem('savedData', JSON.stringify(dataObjects));
+});
+
+formComment.addEventListener('keyup', (e) => {
+  dataObjects.Comment = e.target.value;
+  localStorage.setItem('savedData', JSON.stringify(dataObjects));
+});
+
+window.onload = () => {
+  formName.value = JSON.parse(localStorage.getItem('savedData')).Name;
+  email.value = JSON.parse(localStorage.getItem('savedData')).Email;
+  formComment.value = JSON.parse(localStorage.getItem('savedData')).Comment;
+};
