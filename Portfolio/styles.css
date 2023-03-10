@@ -972,6 +972,7 @@ textarea::placeholder {
     flex-direction: column;
     justify-content: flex-end;
     gap: 14px;
+    background-size: cover;
   }
 
   .work-grid-desktop h6 {
